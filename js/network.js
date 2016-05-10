@@ -15,7 +15,7 @@ var Network = function() {
     // Loop through selections using the .each method
     selection.each(function(data) {
         
-        //data must be in a json format
+        //data must be in an object format
         data = data[0]
         
       // Select `this` as the element in which you want to render your chart
@@ -119,31 +119,36 @@ var Network = function() {
     chart.widthMethod = function(value) {
         if(!arguments.length) return this.width; // if no value is set, get the width
         width = value; // set the width
-        return this;;
+        d3.select("#network").remove();
+        return chart;
     };
 
     chart.heightMethod = function(value) {
         if(!arguments.length) return this.height; // if no value is set, get the height
         height = value; // set the height
-        return this;         
+        d3.select("#network").remove();
+        return chart;         
     };
 
     chart.rMethod = function(value) {
         if(!arguments.length) return this.r; // if no value is set, get the r
         r = value; // set the r
-        return this;        
+        d3.select("#network").remove();
+        return chart;        
     };
     
     chart.borderMethod = function(value) {
         if(!arguments.length) return this.border; // if no value is set, get the border bool
         border = value; // set the border
-        return this;        
+        d3.select("#network").remove();
+        return chart;        
     };
     
     chart.collisionDetectMethod = function(value) {
         if(!arguments.length) return this.collision; // if no value is set, get the collision bool
         collision = value; // set the collision
-        return this;         
+        d3.select("#network").remove();
+        return chart;         
     };
 
   // Return the chart object
