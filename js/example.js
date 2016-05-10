@@ -1,6 +1,7 @@
 
 $(function() {
     
+    //example of js object data
     var data2 = {
     "nodes":[
     {"name":"Myriel","group":1},
@@ -338,10 +339,13 @@ $(function() {
     {"source":76,"target":58,"value":1}
   ]
 }
-    
-    
-    
-    
+   
+   //FOR DATA YOU NEED NODES WITH A NAME AND A GROUP
+   //FOR LINKS YOU NEED A SOURCE NODE INDEX, TARGETE NODE INDEX, AND A CONNECTION WEIGHT NUMBER 
+   
+
+   //example for json data
+   //to look at data go to miserables.json
    var myChart = Network()
         .rMethod(3)
         .heightMethod(900)
@@ -355,10 +359,11 @@ $(function() {
             .datum([data])
             .call(myChart);
         
+        //5 second delay so you can see the changes
         setTimeout(function() {
             myChart.rMethod(25)
             myChart.widthMethod(1000)
-            myChart.collisionDetectMethod(false)
+            myChart.collisionDetectMethod(true)
             chartWrapper.call(myChart); 
         },5000);
         console.log("done")
@@ -367,7 +372,7 @@ $(function() {
     });
     
 
-    // //for normal data (objects of nodes and links)
+    // //for normal js data (objects of nodes and links)
     
     // var myChart2 = Network()
     //     .rMethod(10)

@@ -1,30 +1,33 @@
 // Create a function Network that will be your reusable function
+
+
 var Network = function() {
   // Create variables within the function scope to track
   var width, height, r, collision, border;
   
-  width = 900;
-  height = 400;
-  r = 10;
-  collision = true;
-  border = true;
+  //default values
+  width = 900; //width of svg
+  height = 400; //height of svg
+  r = 10; //size of each node
+  collision = true; //whether collision detection will occur
+  border = true; //whether there will be a border keeping the nodes within the box
   
   // Write your chart function that will be returned by the Network function.
   // It should take in a parameter that represents your selection
   var chart = function(selection) {
     // Loop through selections using the .each method
     selection.each(function(data) {
-        
-        //data must be in an object format
+        //data must be in an object format (2 arrays within: Nodes and links)
         data = data[0]
         
       // Select `this` as the element in which you want to render your chart
         var div = d3.select(this);
         
+        //colors of nodes are default
         var color = d3.scale.category20();
        
         var svg = div.append("svg")
-            .attr("id", "network")
+            .attr("id", 'network')
             .attr("width", width)
             .attr("height", height)
             .attr("style", "outline: solid black;");
@@ -84,6 +87,7 @@ var Network = function() {
             });
         });
     
+        //collision detection function
         function collide(alpha) {
             var quadtree = d3.geom.quadtree(data.nodes);
             return function(d) {
@@ -115,7 +119,7 @@ var Network = function() {
   
 
   
-  
+    //Change or get the width of the chart (value in pixels)
     chart.widthMethod = function(value) {
         if(!arguments.length) return this.width; // if no value is set, get the width
         width = value; // set the width
@@ -123,6 +127,7 @@ var Network = function() {
         return chart;
     };
 
+    //Change or get the height of the chart (value in pixels)
     chart.heightMethod = function(value) {
         if(!arguments.length) return this.height; // if no value is set, get the height
         height = value; // set the height
@@ -130,6 +135,7 @@ var Network = function() {
         return chart;         
     };
 
+    //Change or get the r valuee of the nodes (value in pixels)
     chart.rMethod = function(value) {
         if(!arguments.length) return this.r; // if no value is set, get the r
         r = value; // set the r
@@ -137,6 +143,7 @@ var Network = function() {
         return chart;        
     };
     
+    //Change or get whether there will be a border that keeps nodes inside (boolean value: true/false) 
     chart.borderMethod = function(value) {
         if(!arguments.length) return this.border; // if no value is set, get the border bool
         border = value; // set the border
@@ -144,6 +151,7 @@ var Network = function() {
         return chart;        
     };
     
+    //Change or get whether there will be collision detection between nodese (boolean value: true/false)
     chart.collisionDetectMethod = function(value) {
         if(!arguments.length) return this.collision; // if no value is set, get the collision bool
         collision = value; // set the collision
