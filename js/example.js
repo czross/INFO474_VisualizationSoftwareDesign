@@ -353,7 +353,7 @@ $(function() {
         .borderMethod(true)
         .collisionDetectMethod(true);
    
-    //for json data
+    //getting json data
     d3.json("miserables.json", function(data) {
         var chartWrapper = d3.select('#test-div')
             .datum([data])
@@ -361,7 +361,7 @@ $(function() {
         
         //5 second delay so you can see the changes
         setTimeout(function() {
-            myChart.rMethod(25)
+            myChart.rMethod(15)
             myChart.widthMethod(1000)
             myChart.collisionDetectMethod(true)
             chartWrapper.call(myChart); 
