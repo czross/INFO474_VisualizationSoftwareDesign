@@ -25,7 +25,7 @@ Example code can be found below
 
 
 
-$(function() {
+    $(function() {
     
     //example of js object data
     //needs a node and links object
@@ -108,8 +108,8 @@ $(function() {
     {"name":"Child2","group":10},
     {"name":"Brujon","group":4},
     {"name":"Mme.Hucheloup","group":8}
-  ],
-  "links":[
+    ],
+    "links":[
     {"source":1,"target":0,"value":1},
     {"source":2,"target":0,"value":8},
     {"source":3,"target":0,"value":10},
@@ -364,37 +364,37 @@ $(function() {
     {"source":76,"target":62,"value":1},
     {"source":76,"target":48,"value":1},
     {"source":76,"target":58,"value":1}
-  ]
-}
+    ]
+    }
    
-   //FOR DATA YOU NEED NODES WITH A NAME AND A GROUP
-   //FOR LINKS YOU NEED A SOURCE NODE INDEX, TARGETE NODE INDEX, AND A CONNECTION WEIGHT NUMBER 
+    //FOR DATA YOU NEED NODES WITH A NAME AND A GROUP
+    //FOR LINKS YOU NEED A SOURCE NODE INDEX, TARGETE NODE INDEX, AND A CONNECTION WEIGHT NUMBER 
    
 
-   //example for json data
-   //to look at data go to miserables.json
-   var myChart = Network()
-        .rMethod(3)
-        .heightMethod(900)
-        .widthMethod(900)
-        .borderMethod(true)
-        .collisionDetectMethod(true);
-   
+    //example for json data
+    //to look at data go to miserables.json
+    var myChart = Network()
+    .rMethod(3)
+    .heightMethod(900)
+    .widthMethod(900)
+    .borderMethod(true)
+    .collisionDetectMethod(true);
+
     //getting json data
     d3.json("miserables.json", function(data) {
-        var chartWrapper = d3.select('#test-div')
-            .datum([data])
-            .call(myChart);
-        
-        //5 second delay so you can see the changes
-        setTimeout(function() {
-            myChart.rMethod(15)
-            myChart.widthMethod(1000)
-            myChart.collisionDetectMethod(true)
-            chartWrapper.call(myChart); 
-        },5000);
-        console.log("done")
-        
+    var chartWrapper = d3.select('#test-div')
+    .datum([data])
+    .call(myChart);
+    
+    //5 second delay so you can see the changes
+    setTimeout(function() {
+    myChart.rMethod(15)
+    myChart.widthMethod(1000)
+    myChart.collisionDetectMethod(true)
+    chartWrapper.call(myChart); 
+    },5000);
+    console.log("done")
+    
       
     });
     
@@ -414,4 +414,4 @@ $(function() {
     //     .call(myChart2);
     
 
-});
+    });
