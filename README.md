@@ -1,4 +1,6 @@
 Special thanks to Mike Bostock for his Force-Directed Graph examples and his idea of reusable charts
+
+
 This is a resuable library for creating simple force directed graphs (a network visualization)
 You can use either json data that can be parsed with D3 or creating the proper objects of nodes and links
 
