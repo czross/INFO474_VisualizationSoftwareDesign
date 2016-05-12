@@ -8,6 +8,7 @@ You can use either json data that can be parsed with D3 or creating the proper o
 
 
 there are 5 functions that can be used to change certain aspects of the graphic
+
 1. You can designate the width of the chart
 
 .widthMethod(600) //input in pixels
