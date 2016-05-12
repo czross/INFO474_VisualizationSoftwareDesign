@@ -9,11 +9,19 @@ You can use either json data that can be parsed with D3 or creating the proper o
 
 there are 5 functions that can be used to change certain aspects of the graphic
 1. You can designate the width of the chart
-2. You can designate the height of the chart
-3. You can change the width of the nodes
-4. You can turn bounded borders on and off (nodes stay inside the borders)
-5. You can turn collision detection on and off (nodes do not overlap)
+.widthMethod(600) //input in pixels
 
+2. You can designate the height of the chart
+.heightMethod(600) //input in pixels
+
+3. You can change the width of the nodes
+.rMethod(10) //input in pixels
+
+4. You can turn bounded borders on and off (nodes stay inside the borders)
+.borderMethod(true) //boolean input
+
+5. You can turn collision detection on and off (nodes do not overlap)
+.collisionDetectMethod(false); //boolean method
 
 Example code can be found below
 
