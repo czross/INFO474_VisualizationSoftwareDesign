@@ -7,23 +7,23 @@ there are 5 functions that can be used to change certain aspects of the graphic:
 
 1. You can designate the width of the chart
 
-.widthMethod(600) //input in pixels
+   .widthMethod(600) //input in pixels
 
 2. You can designate the height of the chart
 
-.heightMethod(600) //input in pixels
+   .heightMethod(600) //input in pixels
 
 3. You can change the width of the nodes
 
-.rMethod(10) //input in pixels
+   .rMethod(10) //input in pixels
 
 4. You can turn bounded borders on and off (nodes stay inside the borders)
 
-.borderMethod(true) //boolean input
+   .borderMethod(true) //boolean input
 
 5. You can turn collision detection on and off (nodes do not overlap)
 
-.collisionDetectMethod(false); //boolean method
+   .collisionDetectMethod(false); //boolean method
 
 Example code can be found below
 
